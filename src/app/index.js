@@ -28,7 +28,8 @@ export default function HomeScreen() {
       const userLocation = await Location.getCurrentPositionAsync({});
 
       // TODO 4: Save the returned location with setLocation().
-    }
+      setLocation(userLocation);
+    } 
     catch (error) {
       setErrorMessage('StayFinder could not determine your location. Try again or choose a city below.');
     }
