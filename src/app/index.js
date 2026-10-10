@@ -18,6 +18,11 @@ export default function HomeScreen() {
       // TODO 1: Request foreground location permission and save status.
       const { status } = await Location.requestForegroundPermissionsAsync();
       // TODO 2: If permission is not granted, show a clear message and return.
+      if (status !== 'granted') {
+        setErrorMessage('Permission to access location was denied.');
+        setIsLocating(false);
+        return;
+      }
 
       // TODO 3: Request the current device location.
 
